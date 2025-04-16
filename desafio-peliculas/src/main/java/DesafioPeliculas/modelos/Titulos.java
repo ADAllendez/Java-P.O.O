@@ -1,11 +1,11 @@
-package alura.poo.desafio_peliculas;
+package DesafioPeliculas.modelos;
 
-public class Pelicula {
+public class Titulos {
     private String nombre;
 
     private int fechaDeLanzamiento;
 
-    private String duracion;
+    private int duracionEnMinutos;
 
     private boolean incluidoEnPlan;
 
@@ -22,10 +22,12 @@ public class Pelicula {
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
-    public void setDuracion(String duracion) {
-        this.duracion = duracion;
+    public void setDuracionEnMinutos(int duracionEnMinutos) {
+        this.duracionEnMinutos = duracionEnMinutos;
     }
-    
+
+
+
     public void setIncluidoEnPlan(boolean incluidoEnPlan) {
         this.incluidoEnPlan = incluidoEnPlan;
     }
@@ -36,12 +38,14 @@ public class Pelicula {
     public int getTotalDeEvaluaciones(){
         return totalDeEvaluaciones;
     }
- 
+    public int getDuracionEnMinutos(){
+        return duracionEnMinutos;
+    }
     ////////////////////////       METODOS     //////////////////////////////////////
     public void informacionDePeliculas(){
-        System.out.println("\nEl nombre de la pelicula es: "+ nombre);
+        System.out.println("\nEl nombre del titulo es: "+ nombre);
         System.out.println("La fecha de lanzamiento fue en: "+ fechaDeLanzamiento);
-        System.out.println("La pelicula dura: "+ duracion);
+        System.out.println("El titulo dura en minutos dura: "+ getDuracionEnMinutos());
     }
 
     public void evaluciones(double nota){
