@@ -35,12 +35,38 @@ public class Titulos {
    
     //////////////////////// getters /////////////////////////////////////////////
 
+    public void setSumaDeEvaluciones(double sumaDeEvaluciones) {
+        this.sumaDeEvaluciones = sumaDeEvaluciones;
+    }
+
+    public void setTotalDeEvaluaciones(int totalDeEvaluaciones) {
+        this.totalDeEvaluaciones = totalDeEvaluaciones;
+    }
+
     public int getTotalDeEvaluaciones(){
         return totalDeEvaluaciones;
     }
     public int getDuracionEnMinutos(){
         return duracionEnMinutos;
     }
+
+    
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getFechaDeLanzamiento() {
+        return fechaDeLanzamiento;
+    }
+
+    public boolean isIncluidoEnPlan() {
+        return incluidoEnPlan;
+    }
+
+    public double getSumaDeEvaluciones() {
+        return sumaDeEvaluciones;
+    }
+
     ////////////////////////       METODOS     //////////////////////////////////////
     public void informacionDePeliculas(){
         System.out.println("\nEl nombre del titulo es: "+ nombre);

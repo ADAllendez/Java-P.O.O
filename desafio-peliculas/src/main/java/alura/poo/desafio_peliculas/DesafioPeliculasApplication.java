@@ -1,5 +1,7 @@
 package alura.poo.desafio_peliculas;
 
+import java.util.ArrayList;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -59,6 +61,19 @@ public class DesafioPeliculasApplication {
 
 		filtroRecomendaciones.filtra(episodio);
 
+		var peliculaAlejo = new Pelicula();
+		peliculaAlejo.setNombre("The Lord Of The Ring");
+		peliculaAlejo.setDuracionEnMinutos(180);
+		peliculaAlejo.setFechaDeLanzamiento(2001);
+
+		ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
+		listaDePeliculas.add(peliculaAlejo);
+		listaDePeliculas.add(pelicula);
+
+		System.out.println("Tamanio de la lista: "+ listaDePeliculas.size());
+		System.out.println("La primera pelicula es: "+ listaDePeliculas.get(0).getNombre());
+
+		System.out.println(listaDePeliculas);
 
 	}
 
