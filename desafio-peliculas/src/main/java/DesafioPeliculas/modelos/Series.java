@@ -1,6 +1,12 @@
 package DesafioPeliculas.modelos;
 
 public class Series extends Titulos{
+    
+    //constructor
+    public Series(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+        
+    }
     private int temporadas;
     private int episodiosPorTemporada;
     private int duracionPorEpisodio;

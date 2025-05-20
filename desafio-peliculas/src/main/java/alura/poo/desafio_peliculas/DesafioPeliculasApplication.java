@@ -18,10 +18,9 @@ public class DesafioPeliculasApplication {
 		SpringApplication.run(DesafioPeliculasApplication.class, args);
 
 
-		Pelicula pelicula = new Pelicula();
+		//Constructor
+		Pelicula pelicula = new Pelicula("Interestelar", 2014);
 
-		pelicula.setNombre("Interestelar");
-		pelicula.setFechaDeLanzamiento(2014);
 		pelicula.setDuracionEnMinutos(167);
 		pelicula.setIncluidoEnPlan(true);
 
@@ -35,9 +34,7 @@ public class DesafioPeliculasApplication {
 		System.out.println(pelicula.getTotalDeEvaluaciones());
 		System.out.println(pelicula.mediaEvaluaciones());
 
-		Series reacher = new Series();
-		reacher.setNombre("Reacher");
-		reacher.setFechaDeLanzamiento(2022); 
+		Series reacher = new Series("Reacher", 2022);
 		reacher.setTemporadas(3);
 		reacher.setDuracionPorEpisodio(42);
 		reacher.setEpisodiosPorTemporada(8);
@@ -61,19 +58,19 @@ public class DesafioPeliculasApplication {
 
 		filtroRecomendaciones.filtra(episodio);
 
-		var peliculaAlejo = new Pelicula();
-		peliculaAlejo.setNombre("The Lord Of The Ring");
+		var peliculaAlejo = new Pelicula("The Lord Of The Ring",2001);
 		peliculaAlejo.setDuracionEnMinutos(180);
-		peliculaAlejo.setFechaDeLanzamiento(2001);
 
 		ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
 		listaDePeliculas.add(peliculaAlejo);
 		listaDePeliculas.add(pelicula);
 
-		System.out.println("Tamanio de la lista: "+ listaDePeliculas.size());
-		System.out.println("La primera pelicula es: "+ listaDePeliculas.get(0).getNombre());
+		System.out.println("Tamanio de la lista: "+listaDePeliculas.size());
+		System.out.println("La primera pelicula es: "+listaDePeliculas.get(0).getNombre());
 
-		System.out.println(listaDePeliculas);
+		System.out.println(listaDePeliculas.toString());
+
+		System.out.println("toString de la pelicula: "+listaDePeliculas.get(1).toString());
 
 	}
 

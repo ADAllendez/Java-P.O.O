@@ -13,12 +13,17 @@ public class Titulos {
 
     private int totalDeEvaluaciones = 0;
 
+    //Constructor
+    public Titulos(String nombre, int fechaDeLanzamiento) {
+        this.nombre = nombre;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
     /////////////////////////// setters /////////////////////////////////////////
     public void setNombre (String nombre){
         this.nombre = nombre;
     }
 
-     public void setFechaDeLanzamiento(int fechaDeLanzamiento) {
+    public void setFechaDeLanzamiento(int fechaDeLanzamiento) {
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
@@ -81,4 +86,6 @@ public class Titulos {
     public double mediaEvaluaciones(){
         return sumaDeEvaluciones / totalDeEvaluaciones;
     }
+
+    
 }
