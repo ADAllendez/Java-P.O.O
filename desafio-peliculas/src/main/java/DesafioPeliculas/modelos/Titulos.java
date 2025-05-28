@@ -1,6 +1,6 @@
 package DesafioPeliculas.modelos;
 
-public class Titulos {
+public class Titulos implements Comparable <Titulos>{
     private String nombre;
 
     private int fechaDeLanzamiento;
@@ -85,6 +85,10 @@ public class Titulos {
     }
     public double mediaEvaluaciones(){
         return sumaDeEvaluciones / totalDeEvaluaciones;
+    }
+    @Override
+    public int compareTo(Titulos otroTitulo) {
+        return this.getNombre().compareTo(otroTitulo.getNombre());
     }
 
     

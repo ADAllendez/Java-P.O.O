@@ -1,4 +1,4 @@
-package alura.poo.desafio_peliculas;
+package DesafioPeliculas.principal;
 
 import java.util.ArrayList;
 
@@ -24,9 +24,6 @@ public class DesafioPeliculasApplication {
 		pelicula.setDuracionEnMinutos(167);
 		pelicula.setIncluidoEnPlan(true);
 
-		pelicula.evaluciones(10);
-		pelicula.evaluciones(10);
-		pelicula.evaluciones(7.8);
 		
 		pelicula.informacionDePeliculas();
 		pelicula.mediaEvaluaciones();
@@ -61,6 +58,7 @@ public class DesafioPeliculasApplication {
 		var peliculaAlejo = new Pelicula("The Lord Of The Ring",2001);
 		peliculaAlejo.setDuracionEnMinutos(180);
 
+		//array de peliculas
 		ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
 		listaDePeliculas.add(peliculaAlejo);
 		listaDePeliculas.add(pelicula);
