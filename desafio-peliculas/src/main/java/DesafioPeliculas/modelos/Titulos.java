@@ -1,8 +1,12 @@
 package DesafioPeliculas.modelos;
 
-public class Titulos implements Comparable <Titulos>{
-    private String nombre;
+import com.google.gson.annotations.SerializedName;
 
+public class Titulos implements Comparable <Titulos>{
+
+    @SerializedName("Title")
+    private String nombre;
+    @SerializedName("Year")
     private int fechaDeLanzamiento;
 
     private int duracionEnMinutos;
@@ -17,6 +21,11 @@ public class Titulos implements Comparable <Titulos>{
     public Titulos(String nombre, int fechaDeLanzamiento) {
         this.nombre = nombre;
         this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
+    public Titulos(TituloOmdb miTituloOmdb) {
+        this.nombre = miTituloOmdb.title();
+        this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());
+        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,2));
     }
     /////////////////////////// setters /////////////////////////////////////////
     public void setNombre (String nombre){
@@ -89,6 +98,10 @@ public class Titulos implements Comparable <Titulos>{
     @Override
     public int compareTo(Titulos otroTitulo) {
         return this.getNombre().compareTo(otroTitulo.getNombre());
+    }
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", FechaDeLanzamiento: " + fechaDeLanzamiento + "Duracion: " + duracionEnMinutos;
     }
 
     
