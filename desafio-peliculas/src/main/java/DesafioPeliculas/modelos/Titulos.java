@@ -1,12 +1,11 @@
 package DesafioPeliculas.modelos;
 
-import com.google.gson.annotations.SerializedName;
 
 public class Titulos implements Comparable <Titulos>{
 
-    @SerializedName("Title")
+    
     private String nombre;
-    @SerializedName("Year")
+   
     private int fechaDeLanzamiento;
 
     private int duracionEnMinutos;
@@ -25,7 +24,11 @@ public class Titulos implements Comparable <Titulos>{
     public Titulos(TituloOmdb miTituloOmdb) {
         this.nombre = miTituloOmdb.title();
         this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());
-        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,2));
+        if(miTituloOmdb.runtime().contains("N/A")){
+            throw new ErrorEnConversionDeDuracionException("No pude convertir la duracion, "
+            + "porque contiene un N/A");
+        }
+        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,3).replace(" ", ""));
     }
     /////////////////////////// setters /////////////////////////////////////////
     public void setNombre (String nombre){
@@ -101,7 +104,7 @@ public class Titulos implements Comparable <Titulos>{
     }
     @Override
     public String toString() {
-        return "Nombre: " + nombre + ", FechaDeLanzamiento: " + fechaDeLanzamiento + "Duracion: " + duracionEnMinutos;
+        return " (Nombre: " + nombre + ", FechaDeLanzamiento: " + fechaDeLanzamiento + ", Duracion: " + duracionEnMinutos +")";
     }
 
     
